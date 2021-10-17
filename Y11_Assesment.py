@@ -1,5 +1,5 @@
 # Currency types list
-currency_types = """
+currency_types = ("""
 The U.S. dollar (USD)
 The Euro (EUR)
 Japanese Yen (JPY)
@@ -14,7 +14,9 @@ The Singapore dollar (SGD)
 Norwegian Krone (NOK)
 Mexican peso (MXN)
 Indian rupee (INR)
-Russian ruble (RUB)"""
+Russian ruble (RUB)""")
+
+
 
 # Finding name and capitalise, for user friendliness :)
 name = input("What is your name? ")
@@ -66,6 +68,6 @@ def currency_calculator(currency_type , amount):
       else:
          print("Please enter a number less than 100,000,000,000,000")
    else:
-      print("Please enter a valid number")
+      print("Please enter a valid number or code")
 currency_calculator(currency_type, amount)
 
