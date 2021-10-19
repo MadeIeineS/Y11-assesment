@@ -9,15 +9,16 @@ name = name.capitalize()
 print(f"Hi {name}! We are able to convert the New Zealand dollar to any of the following currencies:  ")
 #print currency types
 for element in currency_types:
-   print (element)
+   print(element)
 currency_type = input("What type of currency would you like to convert to? (please use the list above and enter the currency code e.g. USD) ")
 currency_type = currency_type.upper()
 
 # Setting a boundary for the amount the user can enter
-amount = float(input("How much would you like to convert? $"))
 # Calculating the total with if statements
-def currency_calculator(currency_type , amount):
-   while amount == float:
+def currency_calculator(currency_type):
+   global amount
+   try:
+      amount = float(input("How much would you like to convert? $"))
       if amount <= 100000000000000:
          if currency_type == "USD":
             print(f"That comes to ${amount * 0.73}")
@@ -53,7 +54,8 @@ def currency_calculator(currency_type , amount):
             print("Please enter a valid code")
       else:
          print("Please enter a number less than 100,000,000,000,000")
-   else:
-      print("Please enter a valid number or code")
-currency_calculator(currency_type, amount)
+   except ValueError:
+    print("Please enter a valid number")
+global amount
+currency_calculator(currency_type)
 
