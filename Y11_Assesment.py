@@ -55,7 +55,6 @@ def currency_calculator(currency_type):
       else:
          print("Please enter a number less than 100,000,000,000,000")
    except ValueError:
-    print("Please enter a valid number")
+    print("Please enter a valid number or code")
 global amount
 currency_calculator(currency_type)
-
