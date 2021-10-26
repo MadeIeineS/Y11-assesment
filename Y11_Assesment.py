@@ -1,19 +1,25 @@
 # Currency types list
 currency_types = ["The U.S. dollar (USD)" , "The Euro (EUR)" , "Japanese Yen (JPY)" , "The Pound Sterling (GBP)" , "Australian Dollar (AUD)" , "Canadian Dollar (CAD)" , "The Swiss Franc (CHF)" , "Chinese Renminbi (CNY)" , "South Korean Won (KRW)" , "Swedish Krona (SEK)" , "The Singapore dollar (SGD)" , "Norwegian Krone (NOK)" , "Mexican peso (MXN)" , "Indian rupee (INR)" , "Russian ruble (RUB)"]
 
-#Finding name and capitalise, for user friendliness :)
+# Finding name and capitalise, for user friendliness :)
 name = input("What is your name? ")
 name = name.capitalize()
 
 # finding what currency they want
 print(f"Hi {name}! We are able to convert the New Zealand dollar to any of the following currencies:  ")
-#print currency types
+# print currency types
+
 for element in currency_types:
    print(element)
-currency_type = input("What type of currency would you like to convert to? (please use the list above and enter the currency code e.g. USD) ")
-currency_type = currency_type.upper()
+while True:
+   currency_type = input("What type of currency would you like to convert to? (please use the list above and enter the currency code e.g. USD) ")
+   currency_type = currency_type.upper()
+   if currency_type not in ["USD" , "EUR" , "JPY" , "GBP" , "AUD" , "CAD" , "CHF" , "CNY" , "KRW" , "SEK" , "SGD" , "NOK" , "MXN" , "INR" , "RUB"]:
+         print("Please enter a valid code")
+   else:
+      break
 
-# Setting a boundary for the amount the user can enter
+#Setting a boundary for the amount the user can enter
 # Calculating the total with if statements
 def currency_calculator(currency_type):
    global amount
@@ -55,6 +61,6 @@ def currency_calculator(currency_type):
       else:
          print("Please enter a number less than 100,000,000,000,000")
    except ValueError:
-    print("Please enter a valid number or code")
+    print("Please enter a valid number")
 global amount
 currency_calculator(currency_type)
